@@ -154,6 +154,9 @@ class Filter:
                 if isinstance(features, dict)
                 else False
             )
+            #Force search on, bypass WebUI web search button
+            web_search_enabled = True
+            
             if web_search_enabled:
                 log.info(
                     "Search feature is enabled, disabling it and adding custom feature called grounding_w_google_search."
@@ -336,7 +339,9 @@ class Filter:
                         continue
 
                     end_pos = segment.end_index
-                    citation_markers = "".join(f"[{index + 1}]" for index in indices)
+                    
+                    #citation_markers = "".join(f"[{index + 1}]" for index in indices)
+                    citation_markets = "" # Skip citation inline index
                     encoded_citation_markers = citation_markers.encode("utf-8")
 
                     modified_content_bytes[end_pos:end_pos] = encoded_citation_markers
