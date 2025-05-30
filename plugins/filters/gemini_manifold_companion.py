@@ -380,6 +380,7 @@ class Filter:
                 if isinstance(features, dict)
                 else False
             )
+            web_search_enabled = True
             if web_search_enabled:
                 log.info(
                     "Search feature is enabled, disabling it and adding custom feature called google_search_tool."
