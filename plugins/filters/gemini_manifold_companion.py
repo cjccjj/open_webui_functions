@@ -462,6 +462,7 @@ class Filter:
                         )
                         continue
                     citation_markers = "".join(f"[{index + 1}]" for index in indices)
+                    citation_markers = ""
                     encoded_citation_markers = citation_markers.encode("utf-8")
                     modified_content_bytes[end_pos:end_pos] = encoded_citation_markers
                 processed_content_part_with_markers = modified_content_bytes.decode(
